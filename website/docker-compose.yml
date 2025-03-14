@@ -1,0 +1,28 @@
+version: '3'
+services:
+  # Web server to host the static site
+  website:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - test-network
+
+  # Test container with curl (compatible with ARM64)
+  test:
+    image: curlimages/curl:latest
+    platform: linux/arm64
+    depends_on:
+      - website
+    networks:
+      - test-network
+    volumes:
+      - ./test_auth.sh:/test_auth.sh
+    command: sh -c "chmod +x /test_auth.sh && sleep 3 && /test_auth.sh"
+    environment:
+      - HOST=website
+      - PORT=8080
+
+networks:
+  test-network:
+    driver: bridge
