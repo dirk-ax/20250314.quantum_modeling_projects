@@ -3,425 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axiomatic_AI Education Initiative</title>
-    <meta name="description" content="Program call for the Axiomatic_AI Education Initiative on Truthful and Verifiable AI">
+    <title>Axiomatic_AI Education Initiative - Login</title>
+    <meta name="description" content="Secure access to Axiomatic_AI Education Initiative program information">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .login-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .login-logo {
+            margin-bottom: 2rem;
+        }
+        
+        .login-logo img {
+            height: 60px;
+        }
+        
+        .login-form h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .password-input-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn.primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn.primary:hover {
+            background-color: #c0392b;
+        }
+        
+        .error-message {
+            color: var(--accent-color);
+            margin-top: 1rem;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="images/axiomatic_logo.png" alt="Axiomatic AI Logo" onerror="this.src='https://via.placeholder.com/150x50?text=Axiomatic+AI';">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#overview">Overview</a></li>
-                    <li><a href="#objectives">Objectives</a></li>
-                    <li><a href="#scope">Scope</a></li>
-                    <li><a href="#funding">Funding</a></li>
-                    <li><a href="#contributions">Contributions</a></li>
-                    <li><a href="#apply">Apply</a></li>
-                </ul>
-            </nav>
+    <div class="login-container">
+        <div class="login-logo">
+            <img src="images/axiomatic_logo.png" alt="Axiomatic AI Logo" onerror="this.src='https://via.placeholder.com/200x60?text=Axiomatic+AI';">
         </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Axiomatic_AI Education Initiative</h1>
-            <h2>Truthful and Verifiable AI in Quantum Science</h2>
-            <p>Developing educational materials that prioritize mathematical consistency, formal verification, and interpretable outputs.</p>
-            <div class="cta-buttons">
-                <a href="#apply" class="btn primary">Apply Now</a>
-                <a href="#learn-more" class="btn secondary">Learn More</a>
-            </div>
+        <div class="login-form">
+            <h1>Education Initiative Portal</h1>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input-container">
+                        <input type="password" id="password" name="password" required autocomplete="current-password">
+                        <span class="toggle-password" title="Show/Hide Password">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" class="btn primary">Access Portal</button>
+                <p class="error-message" id="error-message">Incorrect username or password. Please try again.</p>
+            </form>
         </div>
-    </section>
+        <p style="margin-top: 2rem; font-size: 0.8rem; color: #666;">
+            This is a password-protected area for Axiomatic_AI partners.<br>
+            For access, please contact <a href="mailto:education@axiomatic.ai">education@axiomatic.ai</a>.
+        </p>
+    </div>
 
-    <section id="overview" class="section">
-        <div class="container">
-            <h2>Program Overview</h2>
-            <div class="card">
-                <p>The Axiomatic_AI Education Initiative on Truthful and Verifiable AI seeks to establish a new paradigm for educational materials in quantum information science and engineering that prioritize mathematical consistency, formal verification, and interpretable outputs. This initiative will leverage Axiomatic Intelligence (AxI) technologies to create educational content that is both engaging and rigorously correct.</p>
-                <div class="overview-highlights">
-                    <div class="highlight">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h3>Application Deadline</h3>
-                        <p>May 15, 2025</p>
-                    </div>
-                    <div class="highlight">
-                        <i class="fas fa-dollar-sign"></i>
-                        <h3>Funding Level</h3>
-                        <p>Up to $100K per project</p>
-                    </div>
-                    <div class="highlight">
-                        <i class="fas fa-clock"></i>
-                        <h3>Project Duration</h3>
-                        <p>1-2 years</p>
-                    </div>
-                    <div class="highlight">
-                        <i class="fas fa-coins"></i>
-                        <h3>Token Allocation</h3>
-                        <p>1M AX ThinkFree tokens per year</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="objectives" class="section alt-bg">
-        <div class="container">
-            <h2>Program Objectives</h2>
-            <div class="objectives-grid">
-                <div class="objective-item">
-                    <div class="number">1</div>
-                    <p>Develop interactive educational materials that demonstrate and teach the principles of truthful and verifiable AI</p>
-                </div>
-                <div class="objective-item">
-                    <div class="number">2</div>
-                    <p>Create hands-on learning experiences that demonstrate the application of formal verification in quantum information science</p>
-                </div>
-                <div class="objective-item">
-                    <div class="number">3</div>
-                    <p>Establish a community of practice around verified computational tools for quantum engineering education</p>
-                </div>
-                <div class="objective-item">
-                    <div class="number">4</div>
-                    <p>Support the integration of Axiomatic_AI tools into existing quantum science curricula</p>
-                </div>
-                <div class="objective-item">
-                    <div class="number">5</div>
-                    <p>Advance the Mission 10X30 goals through educational innovation</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="scope" class="section">
-        <div class="container">
-            <h2>Scope of Work</h2>
-            <div class="tab-container">
-                <div class="tabs">
-                    <button class="tab-btn active" data-tab="tab1">Verified Simulations</button>
-                    <button class="tab-btn" data-tab="tab2">Interactive Tutorials</button>
-                    <button class="tab-btn" data-tab="tab3">Digital Twins</button>
-                    <button class="tab-btn" data-tab="tab4">Curriculum Integration</button>
-                    <button class="tab-btn" data-tab="tab5">Assessment Tools</button>
-                </div>
-                <div class="tab-content">
-                    <div id="tab1" class="tab-pane active">
-                        <h3>Verified Quantum Simulations</h3>
-                        <p>Development of educational modules using verified simulation tools to demonstrate quantum phenomena with guaranteed mathematical consistency.</p>
-                        <ul>
-                            <li>Interactive visualizations of quantum states</li>
-                            <li>Verified quantum gate operations</li>
-                            <li>Error analysis with formal bounds</li>
-                            <li>Simulation tools with LEAN theorem prover integration</li>
-                        </ul>
-                    </div>
-                    <div id="tab2" class="tab-pane">
-                        <h3>Interactive Tutorials with Formal Verification</h3>
-                        <p>Creation of tutorial content that teaches students how to apply formal verification methods to quantum algorithms and protocols.</p>
-                        <ul>
-                            <li>Step-by-step guides for formal verification</li>
-                            <li>Interactive proof assistants for quantum concepts</li>
-                            <li>Mathematical consistency checks in educational materials</li>
-                            <li>Integration with proof systems like LEAN</li>
-                        </ul>
-                    </div>
-                    <div id="tab3" class="tab-pane">
-                        <h3>Educational Digital Twins</h3>
-                        <p>Development of digital twin environments for quantum hardware that provide students with verified models for learning quantum control and measurement.</p>
-                        <ul>
-                            <li>Hardware-accurate simulation environments</li>
-                            <li>Verified physical models with ATP integration</li>
-                            <li>Real-time visualization of quantum hardware behavior</li>
-                            <li>Integration with AX_CloudTools</li>
-                        </ul>
-                    </div>
-                    <div id="tab4" class="tab-pane">
-                        <h3>Curriculum Integration</h3>
-                        <p>Approaches to integrate Axiomatic_AI tools into existing quantum information science courses.</p>
-                        <ul>
-                            <li>Course modules with Axiomatic_AI tools</li>
-                            <li>Lecture materials with verification components</li>
-                            <li>Laboratory exercises with formal verification</li>
-                            <li>Examples of verification in quantum homework problems</li>
-                        </ul>
-                    </div>
-                    <div id="tab5" class="tab-pane">
-                        <h3>Assessment Tools</h3>
-                        <p>Development of assessment methods that evaluate students' understanding of verification principles in quantum science.</p>
-                        <ul>
-                            <li>Automated grading with verification of solutions</li>
-                            <li>Conceptual assessments of verification principles</li>
-                            <li>Practical exercises in formal verification</li>
-                            <li>Feedback tools with mathematical consistency checks</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="funding" class="section alt-bg">
-        <div class="container">
-            <h2>Funding Details</h2>
-            <div class="funding-grid">
-                <div class="funding-item">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h3>Funding Level</h3>
-                    <p>Up to $100K per project for 1-2 years</p>
-                </div>
-                <div class="funding-item">
-                    <i class="fas fa-coins"></i>
-                    <h3>Token Allocation</h3>
-                    <p>Each funded research group will receive 1M AX ThinkFree tokens per year</p>
-                </div>
-                <div class="funding-item">
-                    <i class="fas fa-clipboard-check"></i>
-                    <h3>Expected Outcomes</h3>
-                    <p>Educational materials, tutorials, assessment tools, and integration guidelines</p>
-                </div>
-                <div class="funding-item">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Performance Metrics</h3>
-                    <p>Usage statistics, student learning outcomes, and integration success metrics</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contributions" class="section">
-        <div class="container">
-            <h2>Contribution Opportunities for Research Groups</h2>
-            <div class="researcher-profiles">
-                <div class="researcher">
-                    <div class="researcher-header">
-                        <div class="avatar">
-                            <img src="images/choi.png" alt="Prof. H. Choi" onerror="this.src='https://via.placeholder.com/150?text=HC';">
-                        </div>
-                        <div class="info">
-                            <h3>Prof. H. Choi's Group</h3>
-                            <p class="specialty">Quantum Networks</p>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <p>Prof. Choi's expertise in quantum networks and quantum information theory positions the group to make significant contributions in:</p>
-                        <h4>Educational Module Development</h4>
-                        <ul>
-                            <li>Creating verified simulation environments for quantum network protocols</li>
-                            <li>Developing interactive visualizations of entanglement distribution with mathematical consistency verification</li>
-                            <li>Designing tutorial series on quantum repeater technologies with formal correctness guarantees</li>
-                        </ul>
-                        <h4>Integration with Research Activities</h4>
-                        <ul>
-                            <li>Connecting educational materials with the Quantum Moonshot program's outputs</li>
-                            <li>Translating research findings into accessible educational content</li>
-                            <li>Providing students with verified models of state-of-the-art quantum network architectures</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="researcher">
-                    <div class="researcher-header">
-                        <div class="avatar">
-                            <img src="images/krastanov.png" alt="Dr. Stefan Krastanov" onerror="this.src='https://via.placeholder.com/150?text=SK';">
-                        </div>
-                        <div class="info">
-                            <h3>Dr. Stefan Krastanov's Group</h3>
-                            <p class="specialty">Quantum Computing</p>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <p>Dr. Krastanov's experience in quantum computing and error correction provides opportunities to contribute in:</p>
-                        <h4>Educational Tools</h4>
-                        <ul>
-                            <li>Developing interactive quantum circuit simulators with built-in verification capabilities</li>
-                            <li>Creating visual explanations of quantum error correction with mathematical consistency guarantees</li>
-                            <li>Building tutorial systems for quantum algorithm design with formal verification components</li>
-                        </ul>
-                        <h4>Research-Education Integration</h4>
-                        <ul>
-                            <li>Connecting diamond-based quantum computing research with educational demonstrations</li>
-                            <li>Translating cutting-edge error correction techniques into accessible learning modules</li>
-                            <li>Creating verified digital twins of quantum processors for educational use</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="researcher">
-                    <div class="researcher-header">
-                        <div class="avatar">
-                            <img src="images/leuenberger.png" alt="Dr. M. Leuenberger" onerror="this.src='https://via.placeholder.com/150?text=ML';">
-                        </div>
-                        <div class="info">
-                            <h3>Dr. M. Leuenberger's Group</h3>
-                            <p class="specialty">Quantum Materials</p>
-                        </div>
-                    </div>
-                    <div class="content">
-                        <p>Dr. Leuenberger's expertise in density functional theory and quantum materials provides unique opportunities to contribute in:</p>
-                        <h4>Materials Science Education</h4>
-                        <ul>
-                            <li>Developing verified simulation tools for quantum material properties</li>
-                            <li>Creating interactive visualizations of color centers in diamond with mathematical consistency</li>
-                            <li>Designing educational modules on quantum defect physics with formal verification</li>
-                        </ul>
-                        <h4>DFT-Based Educational Content</h4>
-                        <ul>
-                            <li>Translating complex DFT calculations into accessible educational visualizations</li>
-                            <li>Connecting material properties to quantum device performance through verified models</li>
-                            <li>Demonstrating the principles of quantum material design with built-in consistency checks</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="technical" class="section alt-bg">
-        <div class="container">
-            <h2>Technical Requirements</h2>
-            <div class="tech-requirements">
-                <div class="tech-item">
-                    <i class="fab fa-docker"></i>
-                    <h3>Docker-Based Deployment</h3>
-                    <ul>
-                        <li>All software must be containerized using Docker</li>
-                        <li>Resource requirements must remain under 10GB memory usage</li>
-                        <li>Deployment scripts must include proper resource limitations</li>
-                    </ul>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-vial"></i>
-                    <h3>Comprehensive Testing</h3>
-                    <ul>
-                        <li>Unit tests for all computational components</li>
-                        <li>Integration tests for full educational modules</li>
-                        <li>Validation of mathematical consistency</li>
-                        <li>Automated test suites for continuous verification</li>
-                    </ul>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-globe"></i>
-                    <h3>Web Interfaces</h3>
-                    <ul>
-                        <li>All interactive tools must be accessible via web interfaces</li>
-                        <li>Server ports must be between 1000-9999</li>
-                        <li>User interactions must be logged for usage analytics</li>
-                        <li>Response time measurements for performance assessment</li>
-                    </ul>
-                </div>
-                <div class="tech-item">
-                    <i class="fas fa-check-double"></i>
-                    <h3>Verification Layer</h3>
-                    <ul>
-                        <li>All educational content must include formal verification capabilities</li>
-                        <li>Mathematical consistency checks must be incorporated</li>
-                        <li>Explanations must be provided when verification fails</li>
-                        <li>Verification results must be accessible to students</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="apply" class="section">
-        <div class="container">
-            <h2>Application Process</h2>
-            <div class="application-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Prepare Your Proposal</h3>
-                        <p>Create a 5-page proposal describing your educational materials, verification methods, curriculum integration, and expected outcomes.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Include Budget and Timeline</h3>
-                        <p>Detail your budget requirements and implementation timeline over the 1-2 year project period.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Describe Team Qualifications</h3>
-                        <p>Outline the specific expertise and resources your team brings to the project.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Submit Your Proposal</h3>
-                        <p>Email your proposal to education@axiomatic.ai by May 15, 2025.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="application-form">
-                <h3>Request for Information</h3>
-                <p>Fill out this form to receive additional information about the Axiomatic_AI Education Initiative.</p>
-                <form id="info-request-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="institution">Institution</label>
-                        <input type="text" id="institution" name="institution" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="research-area">Research Area</label>
-                        <select id="research-area" name="research-area">
-                            <option value="networks">Quantum Networks</option>
-                            <option value="computing">Quantum Computing</option>
-                            <option value="materials">Quantum Materials</option>
-                            <option value="verification">Formal Verification</option>
-                            <option value="education">Quantum Education</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Questions or Comments</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn primary">Request Information</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <div class="footer-logo">
-                        <img src="images/axiomatic_logo.png" alt="Axiomatic AI Logo" onerror="this.src='https://via.placeholder.com/150x50?text=Axiomatic+AI';">
-                    </div>
-                    <p>Axiomatic_AI is developing Automated Interpretable Reasoning (AIR) with formal verification for complex engineering and scientific problems.</p>
-                </div>
-                <div class="footer-links">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><a href="mailto:education@axiomatic.ai">education@axiomatic.ai</a></li>
-                        <li><a href="mailto:education-questions@axiomatic.ai">Questions about the program</a></li>
-                        <li><a href="https://github.com/dirk-ax/20250314.quantum_modeling_projects">GitHub Repository</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Axiomatic AI. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Password visibility toggle
+            const togglePassword = document.querySelector('.toggle-password');
+            const passwordInput = document.getElementById('password');
+            
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+            
+            // Login form submission
+            const loginForm = document.getElementById('login-form');
+            const errorMessage = document.getElementById('error-message');
+            
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
+                
+                // Hash the password using a simple function for comparison
+                // In a real implementation, this would be more secure
+                const hashedPassword = simpleHash(password);
+                
+                // Correct password - this should be configured securely in a real implementation
+                // Using a simple string-based hashing as a basic protection
+                const correctUsername = 'axiomatic';
+                // Hash of 'quantum2025'
+                const correctHashedPassword = '1473209488';
+                
+                if (username === correctUsername && hashedPassword === correctHashedPassword) {
+                    // Store authentication in sessionStorage
+                    sessionStorage.setItem('authenticated', 'true');
+                    
+                    // Redirect to main content
+                    window.location.href = 'main.html';
+                } else {
+                    errorMessage.style.display = 'block';
+                    
+                    // Clear the form after a failed attempt
+                    this.reset();
+                    
+                    // Focus on username field
+                    document.getElementById('username').focus();
+                }
+            });
+            
+            // Simple string hashing function for demo purposes
+            // This is not cryptographically secure
+            function simpleHash(str) {
+                let hash = 0;
+                for (let i = 0; i < str.length; i++) {
+                    const char = str.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash; // Convert to 32bit integer
+                }
+                return hash.toString();
+            }
+        });
+    </script>
 </body>
 </html>

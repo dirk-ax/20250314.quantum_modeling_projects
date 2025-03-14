@@ -141,4 +141,18 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     createMobileMenu();
+
+    // Logout functionality
+    const logoutButton = document.getElementById('logout-btn');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Clear authentication from session storage
+            sessionStorage.removeItem('authenticated');
+            
+            // Redirect to login page
+            window.location.href = 'index.html';
+        });
+    }
 });

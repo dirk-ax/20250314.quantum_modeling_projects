@@ -12,10 +12,24 @@ This is a static website for the Axiomatic_AI Education Initiative on Truthful a
 
 ## Structure
 
-- `index.html` - Main HTML file
+- `index.html` - Login page with password protection
+- `main.html` - Main content page (protected)
 - `css/styles.css` - Stylesheet
-- `js/main.js` - JavaScript for interactivity
+- `js/main.js` - JavaScript for interactivity and authentication
 - `images/` - Directory for images (not included)
+
+## Password Protection
+
+The site is protected with a simple client-side authentication system:
+
+- **Username**: axiomatic
+- **Password**: quantum2025
+
+**Note on Security**: This implementation uses client-side authentication with sessionStorage, which provides basic protection but is not suitable for highly sensitive information. For production use with truly sensitive information, consider:
+
+1. Using proper server-side authentication
+2. Implementing HTTPS
+3. Setting up proper user management
 
 ## GitHub Pages
 
