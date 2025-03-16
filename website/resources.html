@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Resources - Axiomatic AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #004aad;
+            --accent-color: #ff4000;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #ffffff;
+            --bg-dark: #f7f7f7;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--bg-light);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        
+        .logo {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 4px;
+            width: 150px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        #logout-btn {
+            color: var(--accent-color);
+        }
+        
+        /* Hero Section */
+        .hero-resources {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero-resources h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero-resources p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Resource Grid */
+        .resource-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .search-box {
+            margin-bottom: 30px;
+            display: flex;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        
+        .search-box button {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-btn {
+            background-color: var(--bg-dark);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .filter-btn.active {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .resource-card {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .resource-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .resource-card p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .resource-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .resource-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        
+        .resource-card .tag {
+            background-color: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+        }
+        
+        .featured-resources {
+            margin-bottom: 60px;
+        }
+        
+        .featured-box {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 74, 173, 0.8));
+            color: var(--text-light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .featured-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .featured-box p {
+            margin-bottom: 20px;
+        }
+        
+        .featured-box .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .featured-box .btn:hover {
+            background-color: #e03600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 40px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-info {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 40px;
+        }
+        
+        .footer-logo {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+            display: inline-block;
+            padding: 10px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-links ul {
+            list-style-type: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+                margin-left: 0;
+            }
+            
+            .hero-resources {
+                padding: 40px 0;
+            }
+            
+            .hero-resources h1 {
+                font-size: 2rem;
+            }
+            
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-info {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+    <script>
+        // Simple check for authentication
+        document.addEventListener('DOMContentLoaded', function() {
+            const isAuthenticated = sessionStorage.getItem('authenticated');
+            if (!isAuthenticated) {
+                window.location.href = 'index.html';
+            }
+            
+            // Logout functionality
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                sessionStorage.removeItem('authenticated');
+                window.location.href = 'index.html';
+            });
+            
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Toggle active class
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter logic would go here
+                    const filterValue = this.getAttribute('data-filter');
+                    console.log('Filtering by:', filterValue);
+                    
+                    // For now just log, in a real app would filter the grid
+                });
+            });
+            
+            // Search functionality
+            document.getElementById('search-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const searchTerm = document.getElementById('search-input').value;
+                console.log('Searching for:', searchTerm);
+                
+                // In a real app, would filter the resources based on search term
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Axiomatic AI</div>
+            <nav>
+                <ul>
+                    <li><a href="main.html#overview">Overview</a></li>
+                    <li><a href="main.html#objectives">Objectives</a></li>
+                    <li><a href="main.html#scope">Scope</a></li>
+                    <li><a href="main.html#funding">Funding</a></li>
+                    <li><a href="main.html#contributions">Contributions</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="main.html#apply">Apply</a></li>
+                    <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-resources">
+        <div class="container">
+            <h1>Educational Resources</h1>
+            <p>Browse our collection of verified quantum computing educational materials and resources.</p>
+        </div>
+    </section>
+
+    <section class="resource-section">
+        <div class="container">
+            <div class="featured-resources">
+                <div class="featured-box">
+                    <h2>Verified Quantum Computing Curriculum</h2>
+                    <p>Our flagship educational resource provides a comprehensive introduction to quantum computing with mathematically verified explanations and interactive examples.</p>
+                    <a href="#" class="btn">Explore Curriculum</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">Browse Resources</h2>
+            
+            <form id="search-form" class="search-box">
+                <input type="text" id="search-input" placeholder="Search resources...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="article">Articles</button>
+                <button class="filter-btn" data-filter="video">Videos</button>
+                <button class="filter-btn" data-filter="tutorial">Tutorials</button>
+                <button class="filter-btn" data-filter="course">Courses</button>
+                <button class="filter-btn" data-filter="tool">Tools</button>
+            </div>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>Quantum Computing Fundamentals</h3>
+                    <p>A comprehensive introduction to quantum computing concepts with mathematically verified explanations.</p>
+                    <div class="tags">
+                        <span class="tag">Beginner</span>
+                        <span class="tag">Tutorial</span>
+                    </div>
+                    <div class="resource-meta">
+                        <span>15 Chapters</span>
+                        <span>Updated: Mar 2025</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Quantum Algorithms Explained</h3>
+                    <p>Learn about key quantum algorithms with step-by-step verification of their mathematical foundations.</p>
+                    <div class="tags">
+                        <span class="tag">Intermediate</span>
+                        <span class="tag">Article</span>
+                    </div>
+                    <div class="resource-meta">
+                        <span>8 Articles</span>
+                        <span>Updated: Feb 2025</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Quantum Error Correction</h3>
+                    <p>Explore the principles of quantum error correction with formally verified examples and interactive simulations.</p>
+                    <div class="tags">
+                        <span class="tag">Advanced</span>
+                        <span class="tag">Tutorial</span>
+                    </div>
+                    <div class="resource-meta">
+                        <span>6 Modules</span>
+                        <span>Updated: Jan 2025</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Quantum Programming Workshop</h3>
+                    <p>Hands-on programming workshop for implementing quantum algorithms with verification principles.</p>
+                    <div class="tags">
+                        <span class="tag">Intermediate</span>
+                        <span class="tag">Course</span>
+                    </div>
+                    <div class="resource-meta">
+                        <span>10 Sessions</span>
+                        <span>Updated: Mar 2025</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Introduction to Quantum Networks</h3>
+                    <p>Learn about quantum network principles and protocols with formal security proofs.</p>
+                    <div class="tags">
+                        <span class="tag">Beginner</span>
+                        <span class="tag">Video</span>
+                    </div>
+                    <div class="resource-meta">
+                        <span>12 Videos</span>
+                        <span>Updated: Feb 2025</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Quantum Machine Learning</h3>
+                    <p>Explore the intersection of quantum computing and machine learning with verified approaches.</p>
+                    <div class="tags">
+                        <span class="tag">Advanced</span>
+                        <span class="tag">Tutorial</span>
+                    </div>
+                    <div class="resource-meta">
+                        <span>8 Modules</span>
+                        <span>Updated: Mar 2025</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Quantum Simulation Tools</h3>
+                    <p>Access our suite of quantum simulation tools with mathematical verification capabilities.</p>
+                    <div class="tags">
+                        <span class="tag">All Levels</span>
+                        <span class="tag">Tool</span>
+                    </div>
+                    <div class="resource-meta">
+                        <span>5 Tools</span>
+                        <span>Updated: Mar 2025</span>
+                    </div>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Quantum Hardware Overview</h3>
+                    <p>Learn about different quantum hardware platforms and their verified performance characteristics.</p>
+                    <div class="tags">
+                        <span class="tag">Intermediate</span>
+                        <span class="tag">Article</span>
+                    </div>
+                    <div class="resource-meta">
+                        <span>6 Articles</span>
+                        <span>Updated: Jan 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">Axiomatic AI</div>
+                    <p>Axiomatic_AI is developing Automated Interpretable Reasoning (AIR) with formal verification for complex engineering and scientific problems.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="main.html#overview">Program Overview</a></li>
+                        <li><a href="main.html#objectives">Objectives</a></li>
+                        <li><a href="main.html#apply">How to Apply</a></li>
+                        <li><a href="resources.html">Educational Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Axiomatic_AI Education Initiative. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

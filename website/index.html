@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axiomatic_AI Education Initiative - Login</title>
-    <meta name="description" content="Secure access to Axiomatic_AI Education Initiative program information">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Axiomatic AI Education Initiative - Login</title>
+    <meta name="description" content="Secure access to Axiomatic AI Education Initiative program information">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #004aad;
+            --accent-color: #ff4000;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #ffffff;
+            --bg-dark: #f7f7f7;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
             background: linear-gradient(135deg, #000000 0%, #004aad 100%);
+            font-family: Arial, sans-serif;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -30,10 +46,17 @@
         
         .login-logo {
             margin-bottom: 2rem;
-        }
-        
-        .login-logo img {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 4px;
             height: 60px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem auto;
         }
         
         .login-form h1 {
@@ -51,7 +74,7 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: var(--dark-color);
+            color: var(--text-dark);
         }
         
         .form-group input {
@@ -103,9 +126,7 @@
 </head>
 <body>
     <div class="login-container">
-        <div class="login-logo">
-            <img src="images/axiomatic_logo.png" alt="Axiomatic AI Logo" onerror="this.src='https://via.placeholder.com/200x60?text=Axiomatic+AI';">
-        </div>
+        <div class="login-logo">Axiomatic AI</div>
         <div class="login-form">
             <h1>Education Initiative Portal</h1>
             <form id="login-form">
@@ -122,12 +143,12 @@
                         </span>
                     </div>
                 </div>
-                <button type="submit" class="btn primary">Access Portal</button>
+                <button type="submit" class="btn primary" id="login-button">Access Portal</button>
                 <p class="error-message" id="error-message">Incorrect username or password. Please try again.</p>
             </form>
         </div>
         <p style="margin-top: 2rem; font-size: 0.8rem; color: #666;">
-            This is a password-protected area for Axiomatic_AI partners.<br>
+            This is a password-protected area for Axiomatic AI partners.<br>
             For access, please contact <a href="mailto:education@axiomatic.ai">education@axiomatic.ai</a>.
         </p>
     </div>
